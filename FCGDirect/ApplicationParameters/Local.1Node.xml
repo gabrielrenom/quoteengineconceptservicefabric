@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" Name="fabric:/FCGDirect" xmlns="http://schemas.microsoft.com/2011/01/fabric">
+  <Parameters>
+    <Parameter Name="FCGDirect.Policy_PartitionCount" Value="1" />
+    <Parameter Name="FCGDirect.Policy_MinReplicaSetSize" Value="1" />
+    <Parameter Name="FCGDirect.Policy_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="WebApi_InstanceCount" Value="1" />
+    <Parameter Name="FCGDirect.Checkout_PartitionCount" Value="1" />
+    <Parameter Name="FCGDirect.Checkout_MinReplicaSetSize" Value="1" />
+    <Parameter Name="FCGDirect.Checkout_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="ProfileActorService_PartitionCount" Value="1" />
+    <Parameter Name="ProfileActorService_TargetReplicaSetSize" Value="1" />
+    <Parameter Name="ProfileActorService_MinReplicaSetSize" Value="1" />
+  </Parameters>
+</Application>
