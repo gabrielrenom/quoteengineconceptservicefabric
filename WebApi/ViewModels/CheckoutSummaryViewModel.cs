@@ -32,6 +32,9 @@ namespace WebApi.ViewModels
 
         [JsonProperty("price")]
         public double Price { get; set; }
+
+        [JsonProperty("totalPrice")]
+        public double TotalPrice { get { return this.Quantity * Price; } }
     }
 
 }

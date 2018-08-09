@@ -29,7 +29,7 @@ namespace FCGDirect.WebApi.Controllers
         [HttpGet]
         public async Task<IEnumerable<PolicyQuoteViewModel>> Get()
         {
-            return (await _service.GellAll()).Select(x => new PolicyQuoteViewModel { Id = x.Id, CreationDate = x.CreationDate, Number = x.Number, IsActive = x.IsActive });
+            return (await _service.GellAll()).Select(x => new PolicyQuoteViewModel { Id = x.Id, CreationDate = x.CreationDate, Number = x.Number, IsActive = x.IsActive, Price=x.Price });
         }
 
         [HttpGet("{id}")]
@@ -37,7 +37,7 @@ namespace FCGDirect.WebApi.Controllers
         {
             var result = await _service.GetPolicyQuoteById(id);
 
-            return new PolicyQuoteViewModel { Id = result.Id, CreationDate = result.CreationDate, IsActive = result.IsActive, Number = result.Number };
+            return new PolicyQuoteViewModel { Id = result.Id, CreationDate = result.CreationDate, IsActive = result.IsActive, Number = result.Number,Price = result.Price };
         }
 
         [HttpGet("number/{id}")]
@@ -45,7 +45,7 @@ namespace FCGDirect.WebApi.Controllers
         {
             var result = await _service.GetPolicyQuoteByNumber(id);
 
-            return new PolicyQuoteViewModel { Id = result.Id, CreationDate = result.CreationDate, IsActive = result.IsActive, Number = result.Number };
+            return new PolicyQuoteViewModel { Id = result.Id, CreationDate = result.CreationDate, IsActive = result.IsActive, Number = result.Number, Price=result.Price };
         }
 
         // POST api/values
@@ -58,6 +58,7 @@ namespace FCGDirect.WebApi.Controllers
                 {
                     Number = policyquote.Number,
                     CreationDate = DateTime.Now,
+                    Price = policyquote.Price,
                     IsActive = policyquote.IsActive,
                     Id = Guid.NewGuid()
                 };

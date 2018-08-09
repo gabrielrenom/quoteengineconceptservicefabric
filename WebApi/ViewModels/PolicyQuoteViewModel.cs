@@ -14,6 +14,8 @@ namespace FCGDirect.WebApi.ViewModels
         public int Number { get; set; }
         [JsonProperty("creationDate")]
         public DateTime CreationDate { get; set; }
+        [JsonProperty("price")]
+        public double Price { get; set; }
         [JsonProperty("isActive")]
         public bool IsActive { get; set; }
     }

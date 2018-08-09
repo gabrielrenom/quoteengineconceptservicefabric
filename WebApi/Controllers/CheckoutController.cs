@@ -47,10 +47,10 @@ namespace WebApi.Controllers
                      ArtifactId = p.Artifact.Id,
                      ArtifactName = p.Artifact.Type,
                     Price = p.Price,
-                    Quantity = p.Quantity
+                    Quantity = p.Quantity,                   
                 }).ToList(),
                 Date = model.Date,
-                TotalPrice = model.TotalPrice
+                TotalPrice = model.Artifacts.Sum(x=>x.Artifact.Price*x.Quantity)
             };
         }
 
